@@ -3,15 +3,15 @@
  */
 import React from 'react';
 import { AppRegistry, StyleSheet, Text, View,Image } from 'react-native';
-import NavigationBar from './NavigationBar'
+import NavigationBar from '../component/NavigationBar'
 
-// ×´Ì¬À¸£¬¹ö¶¯ÊÓÍ¼
+// çŠ¶æ€æ ï¼Œæ»šåŠ¨è§†å›¾
 export default class PopularPage extends React.Component {
     render(){
         return(
             <View style={styles.container}>
                 <NavigationBar />
-                <view style={{backgroundColor:'red',flex:1}}></view>
+                <View style={{backgroundColor:'red',flex:1}}></View>
             </View>
         )
     }

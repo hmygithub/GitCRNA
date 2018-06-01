@@ -19,7 +19,7 @@ class HomePage extends React.Component {
                 <TabNavigator>
                     <TabNavigator.Item
                         selected={this.state.selectedTab === 'popular'}
-                        title="×îÈÈ"
+                        title="æœ€çƒ­"
                         selectedTitleStyle={{color:'#63B8FF' }}
                         renderIcon={() => <Image style={styles.icon} source={require('../../res/images/ic_popular.png')} />}
                         renderSelectedIcon={() => <Image style={[styles.icon,{tintColor:'#63B8FF'}]} source={require('../../res/images/ic_popular.png')} />}
@@ -28,7 +28,7 @@ class HomePage extends React.Component {
                     </TabNavigator.Item>
                     <TabNavigator.Item
                         selected={this.state.selectedTab === 'trending'}
-                        title="Ç÷ÊÆ"
+                        title="è¶‹åŠ¿"
                         selectedTitleStyle={{color:'#63B8FF' }}
                         renderIcon={() => <Image style={styles.icon} source={require('../../res/images/ic_trending.png')} />}
                         renderSelectedIcon={() => <Image style={[styles.icon,{tintColor:'#63B8FF'}]} source={require('../../res/images/ic_trending.png')} />}
@@ -37,7 +37,7 @@ class HomePage extends React.Component {
                     </TabNavigator.Item>
                     <TabNavigator.Item
                         selected={this.state.selectedTab === 'favorite'}
-                        title="ÊÕ²Ø"
+                        title="æ”¶è—"
                         selectedTitleStyle={{color:'#63B8FF' }}
                         renderIcon={() => <Image style={styles.icon} source={require('../../res/images/ic_favorite.png')} />}
                         renderSelectedIcon={() => <Image style={[styles.icon,{tintColor:'#63B8FF'}]} source={require('../../res/images/ic_favorite.png')} />}
@@ -46,7 +46,7 @@ class HomePage extends React.Component {
                     </TabNavigator.Item>
                     <TabNavigator.Item
                         selected={this.state.selectedTab === 'my'}
-                        title="ÎÒµÄ"
+                        title="æˆ‘çš„"
                         selectedTitleStyle={{color:'#63B8FF' }}
                         renderIcon={() => <Image style={styles.icon} source={require('../../res/images/ic_my.png')} />}
                         renderSelectedIcon={() => <Image style={[styles.icon,{tintColor:'#63B8FF'}]} source={require('../../res/images/ic_my.png')} />}
