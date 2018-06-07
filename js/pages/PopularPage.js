@@ -64,12 +64,13 @@ class PopularTab extends React.Component {
     handleRefresh=()=>{
         this.loadData();
     }
+    renderRow = ({item}) => <Text>{item.full_name}</Text>
     render(){
         return(
             <FlatList
                 data={this.state.dataSource}
                 keyExtractor={this._keyExtractor}
-                renderItem={({item}) => <Text>{item.full_name}</Text>}
+                renderItem={this.renderRow}
                 refreshControl={
                    <RefreshControl
                         refreshing={this.state.isLoading}
