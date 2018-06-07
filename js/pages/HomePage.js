@@ -6,6 +6,7 @@ import { AppRegistry, StyleSheet, Text, View,Image } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator';
 
 import PopularPage from './PopularPage';
+
 class HomePage extends React.Component {
     constructor(props){
         super(props);
