@@ -7,7 +7,7 @@ import { StyleSheet, Text, View, FlatList, RefreshControl,
 import NavigationBar from '../component/NavigationBar';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
 import ProjectRow from '../component/ProjectRow'
-//import ProjectDetails from './ProjectDetails'
+import ProjectDetails from './ProjectDetails'
 
 var popular_def_lans = require('../../res/data/popular_def_lans.json');
 // 状态栏，滚动视图
@@ -108,7 +108,15 @@ class PopularTab extends React.Component {
     handleRefresh=()=>{
         this.loadData();
     }
-    renderRow = ({item}) => <ProjectRow item={item} />
+    // 项目被选中，跳转到详情页面
+    handleProjectSelect = (obj) => {
+        this.props.navigator.push({
+            component: ProjectDetails,
+            params: {title: obj.full_name, url: obj.html_url}
+        })
+    }
+    renderRow = ({item}) => <ProjectRow item={item}
+        onSelect={()=>this.handleProjectSelect(item)}/>
 
     render(){
         return(

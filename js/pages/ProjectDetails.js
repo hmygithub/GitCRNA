@@ -31,6 +31,21 @@ class ProjectDetails extends React.Component {
             </TouchableOpacity>
         </View>
     }
+    getNavRightBtn = ()=> {
+        return <View style={{flexDirection:'row'}}>
+            <TouchableOpacity activeOpacity={0.5}>
+                <Image
+                    style={{width:20,height:20,marginRight:10,tintColor:'#FFF'}}
+                    source={require('../../res/images/ic_share.png')}/>
+            </TouchableOpacity>
+
+            <TouchableOpacity activeOpacity={0.5}>
+                <Image
+                    style={{width:20,height:20,marginRight:10,tintColor:'#FFF'}}
+                    source={require('../../res/images/ic_unstar_transparent.png')}/>
+            </TouchableOpacity>
+        </View>;
+    }
     handleNavStateChange = (s) => {
         // 当前Webview 是否能够返回
         this.setState({ canGoBack: s.canGoBack})
@@ -41,6 +56,13 @@ class ProjectDetails extends React.Component {
                 <NavigationBar
                     title={this.props.title}
                     leftButton= {this.getNavLeftBtn()}
+                    rightButton= {this.getNavRightBtn()}
+                    />
+                <WebView
+                    ref="webView"
+                    startInLoadingState={true}
+                    source={{uri: this.props.url}}
+                    onNavigationStateChange={this.handleNavStateChange}
                     />
             </View>
         )
