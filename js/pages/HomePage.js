@@ -2,7 +2,7 @@
  * Created by lenovo on 2018/5/29.
  */
 import React from 'react';
-import { AppRegistry, StyleSheet, Text, View,Image } from 'react-native';
+import { AppRegistry, StyleSheet, Text, View,Image, DeviceEventEmitter } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator';
 
 import PopularPage from './PopularPage';
@@ -14,6 +14,19 @@ class HomePage extends React.Component {
         this.state = {
             selectedTab: 'popular'
         }
+    }
+    componentDidMount(){
+        // 添加事件监听
+        this.listener = DeviceEventEmitter.addListener('HOMEPAGE_RELOAD',(n)=>{
+            // 主页重新加载
+            // 跳转到新的场景，并重置整个路由栈
+            this.props.navigator.resetTo({
+                component: HomePage
+            })
+        })
+    }
+    componentWillUnmount(){
+        this.listener.remove();
     }
     render(){
         return(
