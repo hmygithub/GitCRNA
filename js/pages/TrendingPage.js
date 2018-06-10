@@ -34,9 +34,6 @@ export default class PopularPage extends React.Component {
     }
 
     render(){
-        componentDidMount(){
-            this.loadData()
-        }
         return(
             <View style={styles.container}>
                 <NavigationBar title="Ç÷ÊÆ" />
